@@ -76,6 +76,8 @@ body {
  */
 
 h1 {
+	justify-content: center;
+	display: flex;
 	font-size: 2em;
 	margin: 0.67em 0;
 }
@@ -469,7 +471,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: lightgray;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -636,6 +638,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.nav-menu {
+	color: black;
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -789,6 +795,12 @@ a:hover, a:active {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.site-title {
+	display: flex;
+	justify-content: center;
+	font-size: 2rem;
 }
 
 /*--------------------------------------------------------------
