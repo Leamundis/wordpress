@@ -10,6 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if(get_option('mc_check') == "true"): ?>
+		<p class=banner>Antony Président!!!</p>
+	<?php endif; ?>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -22,8 +26,8 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				my_awesome_theme_posted_on();
-				my_awesome_theme_posted_by();
+				//my_awesome_theme_posted_on();
+				//my_awesome_theme_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -53,7 +57,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php my_awesome_theme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<!--<footer class="entry-footer">
+		<?php //my_awesome_theme_entry_footer(); ?>
+	</footer>--> <!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -33,8 +33,8 @@ function my_plugin_options() {
         <td><input type="text" name="mc_firstName" value="<?php echo esc_attr( get_option('mc_firstName') ); ?>" /></td>
         <th scope="row">Nom</th>
         <td><input type="text" name="mc_lastName" value="<?php echo esc_attr( get_option('mc_lastName') ); ?>" /></td>
-        <th scope="row">Age</th>
-        <td><input type="text" name="mc_age" value="<?php echo esc_attr( get_option('mc_age') ); ?>" /></td>
+        <th scope="row">Nom de la boîte</th>
+        <td><input type="text" name="mc_society" value="<?php echo esc_attr( get_option('mc_society') ); ?>" /></td>
         <th scope="row">Display banner?</th>
         <?php if(get_option('mc_check') == "true"): ?>
             <td><input type="checkbox" name="mc_check" value="true" checked/></td>
@@ -51,7 +51,24 @@ function my_plugin_options() {
 function register_mysettings() { // whitelist options
   register_setting( 'myoption-group', 'mc_firstName' );
   register_setting( 'myoption-group', 'mc_lastName' );
-  register_setting( 'myoption-group', 'mc_age' );
+  register_setting( 'myoption-group', 'mc_society' );
   register_setting( 'myoption-group', 'mc_check' );
 
 }
+
+
+function name_funct() {
+    return get_option('mc_firstName');
+}
+
+function society_funct() {
+    return get_option('mc_society');
+}
+
+function check_funct() {
+    return get_option('mc_check');
+}
+
+add_shortcode( 'name', 'name_funct' );
+add_shortcode( 'society', 'society_funct' );
+add_shortcode( 'check', 'check_funct' );
